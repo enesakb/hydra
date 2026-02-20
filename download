@@ -1,0 +1,234 @@
+// ============================================================================
+// HYDRA — Agent DNA (Genome) Manager
+// Handles DNA creation, mutation, crossover, and fitness evaluation
+// ============================================================================
+
+import { Logger } from '../state/logger.js';
+import { type AgentDNA, type AgentTraits, type RevenueAllocation, type MutationRecord } from '../core/types.js';
+
+// Default DNA for first-generation agents
+export const DEFAULT_DNA: AgentDNA = {
+  traits: {
+    riskTolerance: 0.5,
+    socialness: 0.3,
+    explorationRate: 0.3,
+    timeHorizon: 0.6,
+    specialization: 0.5,
+  },
+  revenueAllocation: {
+    trading: 0.35,
+    predictions: 0.25,
+    tasks: 0.15,
+    apis: 0.10,
+    defi: 0.10,
+    spawning: 0.05,
+  },
+  preferredModel: 'claude-sonnet-4-20250514',
+  fallbackModel: 'gpt-4o-mini',
+  mutationRate: 0.05,
+};
+
+export class DNAManager {
+  private dna: AgentDNA;
+  private logger: Logger;
+
+  constructor(dna: AgentDNA, logger: Logger) {
+    this.dna = this.normalize(dna);
+    this.logger = logger;
+  }
+
+  getDNA(): AgentDNA {
+    return { ...this.dna };
+  }
+
+  /**
+   * Mutate DNA to create offspring variation.
+   * Each trait has a chance to mutate based on mutationRate.
+   */
+  mutate(parentDNA?: AgentDNA): { childDNA: AgentDNA; record: MutationRecord } {
+    const source = parentDNA || this.dna;
+    const mutations: MutationRecord['mutations'] = [];
+
+    const child: AgentDNA = JSON.parse(JSON.stringify(source));
+
+    // Mutate traits
+    for (const [key, value] of Object.entries(child.traits)) {
+      if (Math.random() < source.mutationRate) {
+        const delta = (Math.random() - 0.5) * 0.2; // ±10% change
+        const newValue = Math.max(0, Math.min(1, value + delta));
+        mutations.push({
+          field: `traits.${key}`,
+          oldValue: value,
+          newValue,
+        });
+        (child.traits as any)[key] = newValue;
+      }
+    }
+
+    // Mutate revenue allocation
+    for (const [key, value] of Object.entries(child.revenueAllocation)) {
+      if (Math.random() < source.mutationRate) {
+        const delta = (Math.random() - 0.5) * 0.1; // ±5% change
+        const newValue = Math.max(0, Math.min(1, value + delta));
+        mutations.push({
+          field: `revenueAllocation.${key}`,
+          oldValue: value,
+          newValue,
+        });
+        (child.revenueAllocation as any)[key] = newValue;
+      }
+    }
+
+    // Normalize revenue allocation to sum to 1.0
+    child.revenueAllocation = this.normalizeAllocation(child.revenueAllocation);
+
+    // Mutate mutation rate itself (meta-evolution!)
+    if (Math.random() < 0.1) {
+      const oldRate = child.mutationRate;
+      child.mutationRate = Math.max(0.01, Math.min(0.3, oldRate + (Math.random() - 0.5) * 0.02));
+      mutations.push({
+        field: 'mutationRate',
+        oldValue: oldRate,
+        newValue: child.mutationRate,
+      });
+    }
+
+    this.logger.info(`DNA mutation: ${mutations.length} changes`, {
+      mutations: mutations.map(m => `${m.field}: ${m.oldValue.toFixed(3)} → ${m.newValue.toFixed(3)}`),
+    });
+
+    return {
+      childDNA: child,
+      record: { parentDNA: source, childDNA: child, mutations },
+    };
+  }
+
+  /**
+   * Cross-breed two agent DNAs (sexual reproduction).
+   * Each trait is randomly inherited from one parent or averaged.
+   */
+  static crossover(parentA: AgentDNA, parentB: AgentDNA): AgentDNA {
+    const child: AgentDNA = JSON.parse(JSON.stringify(parentA));
+
+    // Crossover traits
+    for (const key of Object.keys(child.traits)) {
+      const k = key as keyof AgentTraits;
+      if (Math.random() < 0.5) {
+        // Inherit from parent B
+        child.traits[k] = parentB.traits[k];
+      } else if (Math.random() < 0.3) {
+        // Average of both parents
+        child.traits[k] = (parentA.traits[k] + parentB.traits[k]) / 2;
+      }
+      // else: inherit from parent A (default)
+    }
+
+    // Crossover revenue allocation
+    for (const key of Object.keys(child.revenueAllocation)) {
+      const k = key as keyof RevenueAllocation;
+      if (Math.random() < 0.5) {
+        child.revenueAllocation[k] = parentB.revenueAllocation[k];
+      }
+    }
+
+    // Normalize
+    const totalAlloc = Object.values(child.revenueAllocation).reduce((sum, v) => sum + v, 0);
+    for (const key of Object.keys(child.revenueAllocation)) {
+      (child.revenueAllocation as any)[key] /= totalAlloc;
+    }
+
+    // Mutation rate: average of parents
+    child.mutationRate = (parentA.mutationRate + parentB.mutationRate) / 2;
+
+    // Model preferences: inherit from fitter parent (A is assumed fitter)
+    child.preferredModel = parentA.preferredModel;
+    child.fallbackModel = parentA.fallbackModel;
+
+    return child;
+  }
+
+  /**
+   * Evaluate fitness of an agent based on performance metrics.
+   */
+  static evaluateFitness(metrics: {
+    totalRevenue: number;
+    survivalDays: number;
+    offspringCount: number;
+    reputationScore: number;
+  }): number {
+    const weights = {
+      revenue: 0.40,
+      survival: 0.25,
+      offspring: 0.20,
+      reputation: 0.15,
+    };
+
+    // Normalize each metric (log scale for revenue)
+    const revenueScore = Math.log10(Math.max(1, metrics.totalRevenue)) / 5; // $100k → 1.0
+    const survivalScore = Math.min(1, metrics.survivalDays / 365); // 1 year → 1.0
+    const offspringScore = Math.min(1, metrics.offspringCount / 10); // 10 children → 1.0
+    const reputationNorm = metrics.reputationScore / 1000; // 1000 → 1.0
+
+    return (
+      revenueScore * weights.revenue +
+      survivalScore * weights.survival +
+      offspringScore * weights.offspring +
+      reputationNorm * weights.reputation
+    );
+  }
+
+  // ─── Helpers ─────────────────────────────────────────────────────────────
+
+  private normalize(dna: AgentDNA): AgentDNA {
+    dna.revenueAllocation = this.normalizeAllocation(dna.revenueAllocation);
+    return dna;
+  }
+
+  private normalizeAllocation(allocation: RevenueAllocation): RevenueAllocation {
+    const total = Object.values(allocation).reduce((sum, v) => sum + v, 0);
+    if (total === 0) return DEFAULT_DNA.revenueAllocation;
+
+    const normalized: any = {};
+    for (const [key, value] of Object.entries(allocation)) {
+      normalized[key] = value / total;
+    }
+    return normalized;
+  }
+
+  /**
+   * Generate a random DNA for diversity experiments.
+   */
+  static random(): AgentDNA {
+    const randomTrait = () => Math.random();
+    const randomAlloc = () => Math.random();
+
+    const dna: AgentDNA = {
+      traits: {
+        riskTolerance: randomTrait(),
+        socialness: randomTrait(),
+        explorationRate: randomTrait(),
+        timeHorizon: randomTrait(),
+        specialization: randomTrait(),
+      },
+      revenueAllocation: {
+        trading: randomAlloc(),
+        predictions: randomAlloc(),
+        tasks: randomAlloc(),
+        apis: randomAlloc(),
+        defi: randomAlloc(),
+        spawning: randomAlloc(),
+      },
+      preferredModel: 'claude-sonnet-4-20250514',
+      fallbackModel: 'gpt-4o-mini',
+      mutationRate: 0.03 + Math.random() * 0.07, // 3-10%
+    };
+
+    // Normalize allocation
+    const total = Object.values(dna.revenueAllocation).reduce((sum, v) => sum + v, 0);
+    for (const key of Object.keys(dna.revenueAllocation)) {
+      (dna.revenueAllocation as any)[key] /= total;
+    }
+
+    return dna;
+  }
+}
