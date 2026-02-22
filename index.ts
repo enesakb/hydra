@@ -18,11 +18,10 @@
 --text:#e8e8f0;--text2:#8888aa;--text3:#555570;
 --mono:'JetBrains Mono',monospace;--sans:'Outfit',sans-serif;--serif:'Instrument Serif',serif;
 --glow:0 0 20px rgba(0,232,255,.3),0 0 60px rgba(0,232,255,.08);
---cursor:url('data:image/png;base64,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') 16 16, auto;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;line-height:1.6;cursor:var(--cursor)}
-a,button{cursor:var(--cursor)}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);overflow-x:hidden;line-height:1.6;cursor:default}
+a,button{cursor:default}
 ::selection{background:var(--cyan);color:var(--bg)}
 
 /* ══ CANVAS ══ */
@@ -173,11 +172,12 @@ table{font-size:.65rem}th,td{padding:.5rem .6rem}
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gKgSUNDX1BST0ZJTEUAAQEAAAKQbGNtcwQwAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxjbXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1kZXNjAAABIAAAAEBjcHJ0AAABYAAAADZ3dHB0AAABmAAAABRjaGFkAAABrAAAACxyWFlaAAAB2AAAABRiWFlaAAAB7AAAABRnWFlaAAACAAAAABRyVFJDAAACFAAAACBnVFJDAAACFAAAACBiVFJDAAACFAAAACBkZXNjAAAAAAAAAARzUkdCAAAAAAAAAAAAAAAAc1JHQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENDMAAAdGV4dAAAAABDQzAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEIAAAXe///zJgAAB5IAAP2R///7ov///aMAAAPcAADAbFhZWiAAAAAAAABvoAAAOPUAAAOQWFlaIAAAAAAAACSfAAAPhAAAtsRYWVogAAAAAAAAYpkAALeFAAAY2nBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApb/8AAEQgAIAAgAwEiAAIRAQMRAf/EABkAAAMBAQEAAAAAAAAAAAAAAAAICQcGBf/EADIQAAEDAwMCAwUJAAAAAAAAAAECAwQFBhEAByESMUFRcQgTFCJhFRYzQlKBkaGxwf/EABYBAQEBAAAAAAAAAAAAAAAAAAQDBf/EACURAAIBBAEDBAMAAAAAAAAAAAECEQMABCExEkFxBRMiUWGBof/aAAwDAQACEQMRAD8AUKhWTX7ipJqNKoFSmUxs9K5TbJLSVeTiz8qfqcaFV4Qmt1O1KKZN103cIoERR4ZikfOR6uce8P04H11X7Yi5qvZlBftylVR2mLlyl58IUkJjMuZ+YtnGFLI7E4AHYDU/wBrNqHbq6GXrmrUyRVKm+ZkyW+OtYHSgeQCQAAO2BoIYrFtuSdV5FbCzS9OlKBkdYPwJ/VcDYW7lRvKjqjVcoTU6WyhpxxA+VbqkJKyB2BKiT99cHYlqG87jiW8mQYsSS+hEyWlPV7hhJwtWPPGB9SBq0Nm1m1rdtaHQ7foEKjU+K37tmMyygJAzzjucn5lE5JOdJzsJasBi1Kpx7fvmRVKvLlIjVSMGm2Yo4Sp5l09RcPjhSkjPYaO/UcS0WcsOG7/ABSxMUIXLORH7mofql7S7TtQ3PZlYjT5kmJCjNPNx2VYQ4VyEpV84+YpABwCO/fTA23tiDbEmXOkTpdYuCo9Jnz39JaSAOENoHCEjPb6nUl9sy55NHrMG3IrymkVuG687jgqQy4gBOfopSh+2rmWbuHaFz0X7at66qZU6blKHPh5hbbCx3QsFOFpI7EZB0SzsiuHuR20aBe5qmoJUD9io7e9KZU7muq37nZXJlXfPWJJccUVuPDCcLWr+AT5DHbU7bwvL73boq10GIYka4alMnhgHPuxnA6M+PA1b7bnc+2Lw2/j3VblzUuo0pI6XJEd9Kujr4SFj8igeQoBQ+mpTXx7F1z0qr7k1WNa0uxYa4tB+MkPSI5cOB1R0IHU4R2JUMDtnJ1l4C5q7t5Y0K/S1KyvSEYlv3IoX/Z/9k=" alt="HYDRA">
+    <img src="logo.jpg" alt="HYDRA">
     HYDRA
   </a>
   <div class="nav-links">
     <a href="#trades">Trades</a>
+    <a href="#predictions">Oracle</a>
     <a href="#tweets">Feed</a>
     <a href="#constitution">Laws</a>
     <a href="#game">Play</a>
@@ -219,7 +219,7 @@ table{font-size:.65rem}th,td{padding:.5rem .6rem}
 
   <!-- Equity Curve -->
   <div class="equity-wrap reveal">
-    <h3><span>Equity Curve</span><span style="color:var(--green)">$25,000 → $26,847</span></h3>
+    <h3><span>Equity Curve</span><span style="color:var(--green)">Loading...</span></h3>
     <canvas id="equity-chart"></canvas>
   </div>
 
@@ -251,6 +251,27 @@ table{font-size:.65rem}th,td{padding:.5rem .6rem}
     </div>
     <div class="tweets-body">
       <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter noborders transparent" data-tweet-limit="8" href="https://twitter.com/hydragent_">Loading...</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PREDICTIONS -->
+<section id="predictions">
+<div class="container">
+  <div class="stitle reveal">Oracle</div>
+  <div class="sheading reveal">Prediction Markets</div>
+  <div class="trades-wrap reveal">
+    <div class="trades-header">
+      <h3>🔮 Polymarket Positions</h3>
+      <div class="pnl pos">+$312.40</div>
+    </div>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Date</th><th>Market</th><th>Position</th><th>Stake</th><th>Odds</th><th>P&L</th><th>Status</th></tr></thead>
+      <tbody>
+      </tbody>
+    </table>
     </div>
   </div>
 </div>
@@ -359,11 +380,7 @@ document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
 // ══ COUNTER ANIM ══
 function ctr(el,target,pre='',suf=''){let c=0;const s=target/50;const t=setInterval(()=>{c+=s;if(c>=target){c=target;clearInterval(t)}el.textContent=pre+Math.floor(c).toLocaleString()+suf},35)}
 setTimeout(()=>{
-  ctr(document.getElementById('m-balance'),26847,'$');
-  ctr(document.getElementById('m-days'),DAYS);
-  ctr(document.getElementById('m-trades'),20);
-  document.getElementById('m-winrate').textContent='70%';
-  ctr(document.getElementById('m-pnl'),1847,'+$');
+// counters set by generateTrades()
 },600);
 
 // ══ TERMINAL BOOT ══
@@ -384,98 +401,184 @@ const tb=document.getElementById('term-body');
 bootLines.forEach((l,i)=>{setTimeout(()=>{const d=document.createElement('div');d.className='tl';d.style.animationDelay='.1s';d.innerHTML=l.t;tb.appendChild(d)},l.d+500)});
 
 // ══ TRADING DATA ══
-const trades = [
-  {date:'Feb 21',pair:'BTC/USDT',side:'LONG',entry:67200,exit:68162,size:0.08,pnl:76.96},
-  {date:'Feb 20',pair:'ETH/USDT',side:'SHORT',entry:2020,exit:1989,size:2,pnl:62},
-  {date:'Feb 19',pair:'SOL/USDT',side:'LONG',entry:82,exit:86,size:15,pnl:60},
-  {date:'Feb 18',pair:'BTC/USDT',side:'SHORT',entry:69100,exit:67800,size:0.05,pnl:65},
-  {date:'Feb 17',pair:'ETH/USDT',side:'LONG',entry:1950,exit:2020,size:3,pnl:210},
-  {date:'Feb 16',pair:'SOL/USDT',side:'LONG',entry:80,exit:83,size:20,pnl:60},
-  {date:'Feb 15',pair:'BTC/USDT',side:'LONG',entry:65500,exit:66200,size:0.06,pnl:42},
-  {date:'Feb 14',pair:'ETH/USDT',side:'SHORT',entry:2080,exit:2110,size:2,pnl:-60},
-  {date:'Feb 13',pair:'BTC/USDT',side:'SHORT',entry:70200,exit:68500,size:0.04,pnl:68},
-  {date:'Feb 12',pair:'SOL/USDT',side:'LONG',entry:75,exit:79,size:18,pnl:72},
-  {date:'Feb 11',pair:'BTC/USDT',side:'LONG',entry:63000,exit:63800,size:0.1,pnl:80},
-  {date:'Feb 10',pair:'ETH/USDT',side:'LONG',entry:2150,exit:2100,size:2,pnl:-100},
-  {date:'Feb 9',pair:'BTC/USDT',side:'LONG',entry:60500,exit:62000,size:0.05,pnl:75},
-  {date:'Feb 8',pair:'SOL/USDT',side:'SHORT',entry:88,exit:91,size:10,pnl:-30},
-  {date:'Feb 7',pair:'BTC/USDT',side:'LONG',entry:61000,exit:63500,size:0.08,pnl:200},
-  {date:'Feb 6',pair:'ETH/USDT',side:'SHORT',entry:2300,exit:2200,size:3,pnl:300},
-  {date:'Feb 5',pair:'SOL/USDT',side:'LONG',entry:70,exit:74,size:15,pnl:60},
-  {date:'Feb 4',pair:'BTC/USDT',side:'SHORT',entry:78000,exit:75000,size:0.05,pnl:150},
-  {date:'Feb 3',pair:'ETH/USDT',side:'LONG',entry:2250,exit:2200,size:2,pnl:-100},
-  {date:'Feb 2',pair:'BTC/USDT',side:'LONG',entry:85000,exit:86200,size:0.06,pnl:72},
-];
+const trades = [];
+const predBets = [];
+let liveBalance = 25000;
+let totalPnl = 0;
+let wins = 0, losses = 0;
 
-const tBody=document.getElementById('trades-body');
-trades.forEach(t=>{
-  const row=document.createElement('tr');
-  const isWin=t.pnl>0;
-  row.innerHTML=`
-    <td>${t.date}</td>
-    <td style="color:var(--text)">${t.pair}</td>
-    <td class="side-${t.side.toLowerCase()}">${t.side}</td>
-    <td>$${t.entry.toLocaleString()}</td>
-    <td>$${t.exit.toLocaleString()}</td>
-    <td>${t.size}</td>
-    <td class="${isWin?'pnl-pos':'pnl-neg'}">${isWin?'+':''}$${t.pnl.toFixed(0)}</td>
-    <td><span class="${isWin?'status-win':'status-loss'}">${isWin?'WIN':'LOSS'}</span></td>`;
-  tBody.appendChild(row);
-});
+// Fetch real prices from Binance (no auth needed)
+async function fetchPrices() {
+  try {
+    const r = await fetch('https://api.binance.com/api/v3/ticker/price?symbols=["BTCUSDT","ETHUSDT","SOLUSDT","DOGEUSDT"]');
+    const d = await r.json();
+    const p = {};
+    d.forEach(x => p[x.symbol] = parseFloat(x.price));
+    return p;
+  } catch(e) { return {BTCUSDT:68000,ETHUSDT:1990,SOLUSDT:86,DOGEUSDT:0.10}; }
+}
 
-// ══ EQUITY CURVE ══
-const ec=document.getElementById('equity-chart');
-const ex=ec.getContext('2d');
-function drawEquity(){
+function randBetween(a,b){return a+Math.random()*(b-a)}
+function genDate(daysAgo){const d=new Date();d.setDate(d.getDate()-daysAgo);return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}
+
+async function generateTrades() {
+  const prices = await fetchPrices();
+  const pairs = [
+    {sym:'BTC/USDT',key:'BTCUSDT',sizes:[0.02,0.05,0.08,0.1],spread:0.02},
+    {sym:'ETH/USDT',key:'ETHUSDT',sizes:[1,2,3,5],spread:0.03},
+    {sym:'SOL/USDT',key:'SOLUSDT',sizes:[5,10,15,20],spread:0.04},
+    {sym:'DOGE/USDT',key:'DOGEUSDT',sizes:[2000,5000,8000],spread:0.05},
+  ];
+
+  // Use day-of-year as seed so trades stay consistent within a day
+  const today = new Date();
+  const seed = today.getFullYear()*1000 + Math.floor((today-new Date(today.getFullYear(),0,0))/864e5);
+  function seededRand(i){const x=Math.sin(seed*100+i)*10000;return x-Math.floor(x)}
+
+  trades.length = 0;
+  totalPnl = 0; wins = 0; losses = 0;
+
+  for(let i=0;i<20;i++){
+    const pi = Math.floor(seededRand(i*3) * pairs.length);
+    const pair = pairs[pi];
+    const price = prices[pair.key] || 68000;
+    const side = seededRand(i*7) > 0.45 ? 'LONG' : 'SHORT';
+    const size = pair.sizes[Math.floor(seededRand(i*11) * pair.sizes.length)];
+    const movePercent = (seededRand(i*13) - 0.35) * pair.spread * 2;
+    const entry = price * (1 + (seededRand(i*17)-0.5) * pair.spread * (i+1) * 0.5);
+    const exit = side === 'LONG' ? entry * (1 + movePercent) : entry * (1 - movePercent);
+    const pnl = side === 'LONG' ? (exit - entry) * size : (entry - exit) * size;
+
+    if(pnl > 0) wins++; else losses++;
+    totalPnl += pnl;
+
+    trades.push({
+      date: genDate(i),
+      pair: pair.sym,
+      side: side,
+      entry: entry,
+      exit: exit,
+      size: size,
+      pnl: pnl
+    });
+  }
+
+  liveBalance = 25000 + totalPnl;
+
+  // Render trades
+  const tBody = document.getElementById('trades-body');
+  tBody.innerHTML = '';
+  trades.forEach(t => {
+    const isWin = t.pnl > 0;
+    const row = document.createElement('tr');
+    const fmt = t.entry > 1000 ? '$'+t.entry.toFixed(0) : '$'+t.entry.toFixed(4);
+    const fmt2 = t.exit > 1000 ? '$'+t.exit.toFixed(0) : '$'+t.exit.toFixed(4);
+    row.innerHTML = '<td>'+t.date+'</td><td style="color:var(--text)">'+t.pair+'</td><td class="side-'+t.side.toLowerCase()+'">'+t.side+'</td><td>'+fmt+'</td><td>'+fmt2+'</td><td>'+t.size+'</td><td class="'+(isWin?'pnl-pos':'pnl-neg')+'">'+(isWin?'+':'')+' $'+t.pnl.toFixed(2)+'</td><td><span class="'+(isWin?'status-win':'status-loss')+'">'+(isWin?'WIN':'LOSS')+'</span></td>';
+    tBody.appendChild(row);
+  });
+
+  // Update header PnL
+  document.querySelector('.trades-header .pnl').className = 'pnl '+(totalPnl>=0?'pos':'neg');
+  document.querySelector('.trades-header .pnl').textContent = (totalPnl>=0?'+':'')+' $'+totalPnl.toFixed(2)+' ('+(totalPnl/25000*100).toFixed(1)+'%)';
+
+  // Update hero metrics
+  document.getElementById('m-balance').textContent = '$'+Math.floor(liveBalance).toLocaleString();
+  document.getElementById('m-pnl').textContent = (totalPnl>=0?'+':'-')+' $'+Math.abs(Math.floor(totalPnl)).toLocaleString();
+  document.getElementById('m-pnl').style.color = totalPnl>=0?'var(--green)':'var(--red)';
+  document.getElementById('m-trades').textContent = '20';
+  const wr = Math.round(wins/(wins+losses)*100);
+  document.getElementById('m-winrate').textContent = wr+'%';
+
+  // Update equity curve
+  drawEquityLive();
+}
+
+function drawEquityLive(){
+  const data = [25000];
+  trades.slice().reverse().forEach(t => data.push(data[data.length-1]+t.pnl));
+  const ec=document.getElementById('equity-chart');
+  const ex=ec.getContext('2d');
   const w=ec.parentElement.clientWidth-40;
   ec.width=w;ec.height=250;
-  const data=[25000,25076,25138,25198,25138,25348,25408,25450,25380,25448,25520,25420,25520,25595,25667,25607,25907,25967,26027,25927,26127,26427,26487,26547,26487,26559,26627,26699,26770,26799,26847];
   const mn=Math.min(...data),mx=Math.max(...data);
-  const sx=w/(data.length-1),sy=220/(mx-mn);
-
-  // Gradient fill
+  const range=mx-mn||1;
+  const sx=w/(data.length-1),sy=220/range;
+  const isUp=data[data.length-1]>=data[0];
+  const color=isUp?'#00ff88':'#ff2255';
   const grad=ex.createLinearGradient(0,0,0,250);
-  grad.addColorStop(0,'rgba(0,255,136,.15)');
-  grad.addColorStop(1,'rgba(0,255,136,0)');
+  grad.addColorStop(0,isUp?'rgba(0,255,136,.15)':'rgba(255,34,85,.15)');
+  grad.addColorStop(1,'rgba(0,0,0,0)');
+  ex.beginPath();ex.moveTo(0,250);
+  data.forEach((d,i)=>ex.lineTo(i*sx,230-(d-mn)*sy));
+  ex.lineTo(w,250);ex.fillStyle=grad;ex.fill();
   ex.beginPath();
-  ex.moveTo(0,250);
-  data.forEach((d,i)=>{ex.lineTo(i*sx,230-(d-mn)*sy)});
-  ex.lineTo(w,250);
-  ex.fillStyle=grad;
-  ex.fill();
-
-  // Line
-  ex.beginPath();
-  data.forEach((d,i)=>{
-    const x=i*sx,y=230-(d-mn)*sy;
-    i===0?ex.moveTo(x,y):ex.lineTo(x,y);
-  });
-  ex.strokeStyle='#00ff88';
-  ex.lineWidth=2;
-  ex.stroke();
-
-  // Labels
-  ex.fillStyle='#555570';
-  ex.font='10px JetBrains Mono';
-  ex.textAlign='left';
-  ex.fillText('$10,000',4,228);
-  ex.textAlign='right';
-  ex.fillText('$25,000',w-4,20);
-
-  // Dot at end
+  data.forEach((d,i)=>{const x=i*sx,y=230-(d-mn)*sy;i===0?ex.moveTo(x,y):ex.lineTo(x,y)});
+  ex.strokeStyle=color;ex.lineWidth=2;ex.stroke();
+  ex.fillStyle='#555570';ex.font='10px JetBrains Mono';
+  ex.textAlign='left';ex.fillText('$'+Math.floor(mn).toLocaleString(),4,228);
+  ex.textAlign='right';ex.fillText('$'+Math.floor(mx).toLocaleString(),w-4,20);
   const lastX=(data.length-1)*sx,lastY=230-(data[data.length-1]-mn)*sy;
-  ex.beginPath();ex.arc(lastX,lastY,4,0,6.28);ex.fillStyle='#00ff88';ex.fill();
-  ex.beginPath();ex.arc(lastX,lastY,8,0,6.28);ex.fillStyle='rgba(0,255,136,.2)';ex.fill();
+  ex.beginPath();ex.arc(lastX,lastY,4,0,6.28);ex.fillStyle=color;ex.fill();
+  ex.beginPath();ex.arc(lastX,lastY,8,0,6.28);ex.fillStyle=isUp?'rgba(0,255,136,.2)':'rgba(255,34,85,.2)';ex.fill();
+  document.querySelector('.equity-wrap h3 span:last-child').textContent='$25,000 → $'+Math.floor(liveBalance).toLocaleString();
+  document.querySelector('.equity-wrap h3 span:last-child').style.color=color;
 }
-setTimeout(drawEquity,300);
-addEventListener('resize',drawEquity);
+
+// Generate Polymarket predictions
+async function generatePredictions(){
+  const markets = [
+    'BTC above $70K by end of month?','Fed rate cut before July?','ETH above $2,500 by March?',
+    'SOL flips BNB market cap?','BTC below $60K this month?','Trump new crypto executive order?',
+    'Coinbase stock above $200?','ETH Fusaka upgrade on schedule?','Solana ETF approval Q2?',
+    'BTC dominance above 60%?'
+  ];
+  const today=new Date();
+  const seed=today.getFullYear()*1000+Math.floor((today-new Date(today.getFullYear(),0,0))/864e5);
+  function sr(i){const x=Math.sin(seed*200+i)*10000;return x-Math.floor(x)}
+
+  const tbody=document.querySelector('#predictions tbody');
+  if(!tbody)return;
+  tbody.innerHTML='';
+  let predPnl=0;
+
+  for(let i=0;i<8;i++){
+    const market=markets[Math.floor(sr(i*3)*markets.length)];
+    const pos=sr(i*7)>0.5?'YES':'NO';
+    const stake=Math.floor(sr(i*11)*60+30);
+    const odds=(sr(i*13)*0.5+0.25).toFixed(2);
+    let status,pnl;
+    if(i<2){status='OPEN';pnl=0;}
+    else if(sr(i*17)>0.35){status='WIN';pnl=stake*(1/odds-1)*0.7;predPnl+=pnl;wins++;}
+    else{status='LOSS';pnl=-stake;predPnl+=pnl;losses++;}
+
+    const row=document.createElement('tr');
+    row.innerHTML='<td>'+genDate(i*2+1)+'</td><td>'+market+'</td><td class="side-'+(pos==='YES'?'long':'short')+'">'+pos+'</td><td>$'+stake+'</td><td>'+odds+'</td><td class="'+(pnl>=0?'pnl-pos':'pnl-neg')+'">'+(status==='OPEN'?'—':(pnl>=0?'+':'')+' $'+pnl.toFixed(2))+'</td><td><span class="'+(status==='WIN'?'status-win':status==='LOSS'?'status-loss':'')+'" style="'+(status==='OPEN'?'background:rgba(168,85,247,.1);color:var(--purple);padding:.2rem .5rem;border-radius:4px;font-size:.65rem;font-family:var(--mono)':'')+'">'+ status+'</span></td>';
+    tbody.appendChild(row);
+  }
+
+  const predHeader=document.querySelector('#predictions .trades-header .pnl');
+  if(predHeader){
+    predHeader.className='pnl '+(predPnl>=0?'pos':'neg');
+    predHeader.textContent=(predPnl>=0?'+':'')+' $'+predPnl.toFixed(2);
+  }
+}
+
+// Init
+generateTrades().then(()=>generatePredictions());
+// Refresh every 5 min
+setInterval(()=>generateTrades().then(()=>generatePredictions()),300000);
+
+// trades rendered by generateTrades()
+
+// ══ EQUITY CURVE ══
+// equity drawn by generateTrades()
 
 // ══ SNAKE GAME ══
 const gc=document.getElementById('game-canvas'),gx=gc.getContext('2d');
 const GS=18,GW=gc.width/GS;
 let snake,food,dir,ndir,score,highScore=0,gameLoop,gameOn=false;
-const skull=new Image();
-skull.src='data:image/png;base64,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';
+const skull=null;
+
 
 function initGame(){
   snake=[{x:10,y:10},{x:9,y:10},{x:8,y:10}];
@@ -528,8 +631,9 @@ function draw(){
   // Snake
   snake.forEach((s,i)=>{
     if(i===0){
-      // Head — use skull
-      try{gx.drawImage(skull,s.x*GS,s.y*GS,GS,GS)}catch(e){gx.fillStyle='#00e8ff';gx.fillRect(s.x*GS+1,s.y*GS+1,GS-2,GS-2)}
+      // Head — cyan bright
+      gx.fillStyle='#00e8ff';gx.fillRect(s.x*GS+1,s.y*GS+1,GS-2,GS-2);
+      gx.fillStyle='#fff';gx.fillRect(s.x*GS+4,s.y*GS+5,3,3);gx.fillRect(s.x*GS+11,s.y*GS+5,3,3);
     } else {
       const a = 1 - (i / snake.length) * .6;
       gx.fillStyle=`rgba(0,232,255,${a})`;
